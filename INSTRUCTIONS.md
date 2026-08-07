@@ -19,8 +19,8 @@
 - **Bonus**: A demo walkthrough (video or in README) is helpful but not mandatory.
 
 ## Current State
-- **Completed**: Initialized project, built all required routes (`/`, `/dashboard`, `/day/12`), completely overhauled design from Night Shift to Neo-Brutalism.
-- **In Progress**: Final Verification and Walkthrough updates.
+- **Completed**: Initialized project, built all required routes (`/`, `/dashboard`, `/day/12`), polished design to Modern Soft UI (retaining custom color palette).
+- **In Progress**: Final Verification.
 - **Upcoming**: Hackathon Submission.
 
 *(Note to AI: Read this file whenever restarting or resuming the session to regain context.)*

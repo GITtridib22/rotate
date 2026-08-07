@@ -3,18 +3,22 @@
 :root {
   --bg-primary: #FFF8E7; /* Harsh cream */
   --bg-card: #FFFFFF;
-  --text-primary: #000000;
-  --text-secondary: #333333;
+  --text-primary: #1A1A1A;
+  --text-secondary: #5A5A5A;
   
-  /* Brutalist Colors */
+  /* Modern Colors */
   --accent: #FF3366; /* Hot Pink */
   --accent-alt: #4D4DFF; /* Electric Blue */
   --accent-yellow: #FFDF00;
   --success: #00E676;
   --error: #FF3333;
   
-  --border-color: #000000;
-  --border-width: 4px;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-width: 1px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 20px 60px rgba(77, 77, 255, 0.12);
 }
 
 * {
@@ -27,7 +31,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Space Grotesk', sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
   min-height: 100vh;
 }
 
@@ -36,28 +40,31 @@ body {
   width: 100%;
   max-width: 450px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 1.5rem;
 }
 
 /* Typography */
 h1, h2, h3 {
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .hero-title {
-  font-size: 2.75rem;
-  line-height: 1;
+  font-size: 3rem;
+  line-height: 1.1;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 0px var(--accent-alt);
+  background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+  -webkit-background-clip: text;
+  color: transparent;
+  padding-bottom: 0.2rem;
 }
 
 .hero-subtitle {
   font-size: 1.1rem;
   color: var(--text-secondary);
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
 }
 
 .text-highlight {
@@ -67,13 +74,20 @@ h1, h2, h3 {
   color: var(--accent);
 } /* Retaining class name for JSX compatibility */
 
-/* Neo-Brutalist Components */
+/* Soft UI Components */
 .glass-card {
   background: var(--bg-card);
   border: var(--border-width) solid var(--border-color);
-  box-shadow: 6px 6px 0px var(--border-color);
-  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
   margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .btn-primary {
@@ -82,20 +96,24 @@ h1, h2, h3 {
   text-align: center;
   background: var(--accent-alt);
   color: #FFF;
-  border: var(--border-width) solid var(--border-color);
-  box-shadow: 4px 4px 0px var(--border-color);
-  padding: 1rem;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
   font-size: 1.1rem;
   font-weight: 800;
-  text-transform: uppercase;
   text-decoration: none;
-  transition: transform 0.1s, box-shadow 0.1s;
+  transition: all 0.2s ease;
   cursor: pointer;
+  box-shadow: 0 8px 24px rgba(77, 77, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(77, 77, 255, 0.4);
 }
 
 .btn-primary:active {
-  transform: translate(4px, 4px);
-  box-shadow: 0px 0px 0px var(--border-color);
+  transform: translateY(1px);
 }
 
 .btn-primary.mt-6, .btn-primary.mt-4 {
@@ -106,183 +124,184 @@ h1, h2, h3 {
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
 }
 
 .timeline-item {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .timeline-node {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: var(--accent-yellow);
-  border: var(--border-width) solid var(--border-color);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
   font-size: 1.2rem;
   flex-shrink: 0;
-  box-shadow: 2px 2px 0px var(--border-color);
+  color: #1A1A1A;
+  box-shadow: 0 8px 20px rgba(255, 223, 0, 0.4);
 }
 
 .timeline-content h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
 }
 
 .timeline-content p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
   font-weight: 600;
 }
 
 /* Dashboard Styles */
 .dashboard-container {
-  padding-top: 2rem;
-  padding-bottom: 6rem;
+  padding-top: 2.5rem;
+  padding-bottom: 7rem;
 }
 
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .greeting {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
 }
 
 .standing-badge {
   display: inline-block;
-  background: var(--accent-yellow);
-  border: 2px solid var(--border-color);
-  padding: 0.2rem 0.75rem;
-  font-size: 0.8rem;
+  background: rgba(255, 223, 0, 0.15);
+  color: #D4B000;
+  border-radius: 20px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.85rem;
   font-weight: 800;
-  text-transform: uppercase;
-  box-shadow: 2px 2px 0px var(--border-color);
+  margin-top: 0.25rem;
 }
 
 .avatar {
-  width: 48px;
-  height: 48px;
-  border: var(--border-width) solid var(--border-color);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-alt);
   background: var(--bg-card);
+  box-shadow: 0 4px 12px rgba(77, 77, 255, 0.2);
 }
 
 .streak-card {
   position: relative;
-  background: var(--accent-yellow);
+  background: var(--bg-card);
+  border: 2px solid var(--accent-yellow);
 }
 
 .streak-card.missed-day {
-  background: var(--error);
-}
-.streak-card.missed-day * {
-  color: #FFF !important;
-}
-.streak-card.missed-day .progress-circle {
-  border-color: #FFF;
-}
-.streak-card.missed-day .progress-bar-container {
-  border-color: #FFF;
+  border-color: var(--error);
+  background: rgba(255, 51, 51, 0.02);
 }
 
 .streak-card.empty-state {
-  background: var(--bg-card);
+  border-color: var(--border-color);
 }
 
 .streak-stats {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .streak-number {
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1;
-  color: var(--text-primary);
-  text-shadow: 2px 2px 0px #FFF;
+  color: var(--accent);
 }
 
 .text-small {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  color: var(--text-secondary);
 }
 
 .progress-circle {
-  width: 60px;
-  height: 60px;
-  background: #FFF;
-  border: var(--border-width) solid var(--border-color);
+  width: 68px;
+  height: 68px;
+  background: var(--bg-card);
+  border-radius: 50%;
+  border: 4px solid var(--accent-yellow);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 1.1rem;
-  box-shadow: 2px 2px 0px var(--border-color);
-  color: var(--text-primary) !important;
+  font-size: 1.2rem;
+  color: var(--text-primary);
 }
 
 .progress-bar-container {
   width: 100%;
-  height: 16px;
-  background: #FFF;
-  border: 2px solid var(--border-color);
-  margin-bottom: 0.5rem;
+  height: 12px;
+  background: #F0F0F0;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
 }
 
 .progress-bar {
   height: 100%;
-  background: var(--accent-alt);
-  border-right: 2px solid var(--border-color);
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+  border-radius: 10px;
 }
 
 .progress-text {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-align: right;
+  color: var(--text-secondary);
 }
 
 .warning-text {
-  font-weight: 800;
-  font-size: 0.85rem;
-  margin-top: 1rem;
-  background: #FFF;
-  padding: 0.5rem;
-  border: 2px solid var(--border-color);
-  color: var(--error) !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 1.25rem;
+  background: rgba(255, 51, 51, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  color: var(--error);
 }
 
 .task-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
   margin-top: 0.5rem;
 }
 
 .task-desc {
   font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.5;
-  margin-bottom: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .completed-badge {
-  background: var(--success);
-  border: var(--border-width) solid var(--border-color);
-  padding: 0.75rem;
+  background: rgba(0, 230, 118, 0.1);
+  color: #00A650;
+  border-radius: var(--radius-md);
+  padding: 1rem;
   text-align: center;
   font-weight: 800;
   text-transform: uppercase;
   margin-top: 1rem;
-  box-shadow: 2px 2px 0px var(--border-color);
 }
 
 /* Challenge Day Styles */
@@ -295,66 +314,75 @@ h1, h2, h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .back-btn {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
   color: var(--text-primary);
-  font-size: 0.9rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  text-decoration: underline;
 }
 
 .badge-glow {
-  background: var(--accent-alt);
-  color: #FFF;
-  border: 2px solid var(--border-color);
-  padding: 0.2rem 0.5rem;
+  background: rgba(77, 77, 255, 0.1);
+  color: var(--accent-alt);
+  border-radius: 20px;
+  padding: 0.3rem 0.85rem;
   font-weight: 800;
-  box-shadow: 2px 2px 0px var(--border-color);
 }
 
 .divider {
-  height: var(--border-width);
+  height: 1px;
   background: var(--border-color);
-  margin: 1.5rem 0;
+  margin: 2rem 0;
 }
 
 .text-large {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.7;
 }
 
 .submit-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  margin-top: 1rem;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .input-group label {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 800;
-  text-transform: uppercase;
+  color: var(--text-primary);
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .modern-input {
   width: 100%;
-  background: #FFF;
-  border: var(--border-width) solid var(--border-color);
-  padding: 0.875rem 1rem;
+  background: #F9F9F9;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
   font-family: inherit;
   font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.1s;
+  font-weight: 400;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
 }
 
 .modern-input:focus {
   outline: none;
-  box-shadow: 4px 4px 0px var(--accent-alt);
+  background: #FFF;
+  border-color: var(--accent-alt);
+  box-shadow: 0 0 0 4px rgba(77, 77, 255, 0.1);
 }
 
 .loading {
@@ -365,42 +393,49 @@ h1, h2, h3 {
 /* Demo Controls (For Judges) */
 .demo-controls {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: var(--bg-card);
-  border-top: var(--border-width) solid var(--border-color);
-  padding: 1rem;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 100px;
+  padding: 0.75rem 1rem;
   z-index: 100;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0 !important;
 }
 
 .demo-title {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 0.5rem;
+  display: none;
 }
 
 .demo-buttons {
   display: flex;
   gap: 0.5rem;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .demo-btn {
-  background: #FFF;
-  border: 2px solid var(--border-color);
-  padding: 0.4rem 0.75rem;
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
+  color: var(--text-secondary);
+  border-radius: 50px;
   cursor: pointer;
-  box-shadow: 2px 2px 0px var(--border-color);
+  transition: all 0.2s ease;
 }
 
 .demo-btn.active {
-  background: var(--accent-yellow);
+  background: var(--text-primary);
+  color: #FFF;
 }
 
 /* Success State Animations */
@@ -414,18 +449,18 @@ h1, h2, h3 {
 }
 
 .celebration-icon {
-  font-size: 5rem;
-  margin-bottom: 1rem;
+  font-size: 5.5rem;
+  margin-bottom: 1.5rem;
 }
 
 @keyframes celebrate {
   0% { transform: scale(0.8); opacity: 0; }
-  50% { transform: scale(1.1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 1; }
   100% { transform: scale(1); opacity: 1; }
 }
 
 .animate-celebration {
-  animation: celebrate 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: celebrate 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Utility Helpers */
