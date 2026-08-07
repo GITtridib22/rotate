@@ -78,7 +78,7 @@ export default function Dashboard() {
 
       {/* Demo Controls Floating Panel for Judges */}
       <div className="demo-controls glass-card">
-        <p className="demo-title">Judge Controls (Edge Cases)</p>
+        <p className="demo-title">For Judge Control</p>
         <div className="demo-buttons">
           <button 
             className={`demo-btn ${demoState === "default" ? "active" : ""}`}

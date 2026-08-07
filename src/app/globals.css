@@ -418,7 +418,13 @@ h1, h2, h3 {
 }
 
 .demo-title {
-  display: none;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .demo-buttons {
