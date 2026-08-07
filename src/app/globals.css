@@ -179,7 +179,7 @@ h1, h2, h3 {
 /* Dashboard Styles */
 .dashboard-container {
   padding-top: 2.5rem;
-  padding-bottom: 7rem;
+  padding-bottom: 10rem;
 }
 
 .dashboard-header {
@@ -323,7 +323,7 @@ h1, h2, h3 {
 /* Challenge Day Styles */
 .day-container {
   padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 10rem;
 }
 
 .day-header {
