@@ -368,12 +368,12 @@ h1, h2, h3 {
 
 .modern-input {
   width: 100%;
-  background: #FFFFFF;
+  background: transparent;
   border: 1px solid var(--border-color);
-  border-radius: 24px; /* Curved edges as requested */
+  border-radius: 100px; /* Fully curved pill-shape like the screenshot */
   padding: 0.9rem 1.25rem;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: var(--text-primary);
   transition: all 0.2s ease;
@@ -382,14 +382,15 @@ h1, h2, h3 {
 .modern-input:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.15);
+  box-shadow: 0 0 0 1px var(--accent);
 }
 
 .helper-text {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  margin-top: 0.35rem;
+  margin-top: 0.5rem;
   margin-left: 0.25rem;
+  line-height: 1.4;
 }
 
 .loading {
