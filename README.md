@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ABTalks Redesign - Hackathon Submission
 
-## Getting Started
+This repository contains our submission for **Problem Statement 1 (Redesign ABTalks)**.
 
-First, run the development server:
+## Route Map
+/
+/dashboard
+/day/12
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About the Project
+We built a mobile-first, high-performance frontend using Next.js. The design uses a custom "Night Shift" aesthetic to reduce eye strain for students coding late at night after college. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### The Thoughtful Idea
+To keep students motivated during late-night grinds, we implemented **Dopamine-Boosting Micro-Animations**. When a student successfully submits their GitHub and LinkedIn URLs on the Challenge Day page, the UI triggers a satisfying full-screen celebration sequence to reward their consistency.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Testing Edge Cases
+As per the requirements, we used mocked data instead of a production database. To test the edge cases (First day, Missed day, Empty profile), you can adjust the boolean values inside `src/data/mockDB.json`:
+- Set `"hasMissedDay": true` to see the missed streak warning.
+- Set `"firstDayState": true` to see the empty profile / Day 1 state.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
+- **Framework:** Next.js (App Router)
+- **Styling:** Custom CSS Modules (No Tailwind)
+- **Data:** Mock JSON
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## AI Usage Log
+Please see `PROMPTS.md` in the root directory for a full, atomic log of AI interactions and design decisions made during the build.
