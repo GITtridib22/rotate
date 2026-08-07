@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, use } from "react";
 import Link from "next/link";
 import db from "@/data/mockDB.json";
 
 export default function ChallengeDay({ params }) {
-  const { id } = params; // from /day/[id]
+  const unwrappedParams = use(params);
+  const id = unwrappedParams.id; // from /day/[id]
   const task = db.todayTask;
   
   const [githubUrl, setGithubUrl] = useState("");
