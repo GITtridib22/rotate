@@ -29,3 +29,10 @@ This file tracks the AI prompts and interactions used to build this project, as 
 - **What was implemented:** Built the Challenge Day page with a distraction-free reading zone and a form to submit GitHub/LinkedIn URLs. Implemented the 'Thoughtful Idea': a dopamine-boosting success micro-animation when the form is submitted.
 - **Files Changed:** `src/app/day/[id]/page.js`, `src/app/globals.css`
 - **Design Decisions:** Leveraged Next.js App Router dynamic routes (`[id]`). Made the page a Client Component to handle form state and conditional rendering of the success celebration animation, directly tying into the "late night coding morale boost" concept.
+
+## Feature 5: Edge Case Demo Controls & Next.js 15 Fixes
+- **Date:** 2026-08-07
+- **Prompt Summary:** User caught that judges test on live URLs, so mock data needed UI toggles. Also caught a Next.js 15 dynamic route bug.
+- **What was implemented:** Added a floating "Judge Controls" panel to `/dashboard` to toggle between Normal, Missed Day, and Empty Profile states directly on the live deployment. Created `route-map.txt`. Fixed a Next.js 15 breaking change where `params` must be unwrapped with `React.use()`.
+- **Files Changed:** `src/app/dashboard/page.js`, `src/app/globals.css`, `src/app/day/[id]/page.js`, `route-map.txt`
+- **Design Decisions:** Built the demo panel specifically for hackathon judging convenience without needing a real backend to trigger edge cases.
