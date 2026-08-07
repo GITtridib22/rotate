@@ -19,8 +19,8 @@
 - **Bonus**: A demo walkthrough (video or in README) is helpful but not mandatory.
 
 ## Current State
-- **Completed**: Initialized project, built Landing Page (`/`), built Student Dashboard (`/dashboard`).
-- **In Progress**: Building Challenge Day (`/day/12`).
-- **Upcoming**: Final Verification and Walkthrough.
+- **Completed**: Initialized project, built Landing Page (`/`), built Student Dashboard (`/dashboard`), built Challenge Day (`/day/12`).
+- **In Progress**: Final Verification and Walkthrough creation.
+- **Upcoming**: Hackathon Submission.
 
 *(Note to AI: Read this file whenever restarting or resuming the session to regain context.)*
