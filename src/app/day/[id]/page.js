@@ -70,6 +70,7 @@ export default function ChallengeDay({ params }) {
                   required 
                   className="modern-input"
                 />
+                <p className="helper-text">Paste the direct URL to your public GitHub commit (e.g., https://github.com/user/repo/commit/...)</p>
               </div>
               
               <div className="input-group">
@@ -82,6 +83,7 @@ export default function ChallengeDay({ params }) {
                   required 
                   className="modern-input"
                 />
+                <p className="helper-text">Paste the link to your LinkedIn post sharing your daily learning.</p>
               </div>
 
               <button 

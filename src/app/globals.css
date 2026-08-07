@@ -370,8 +370,8 @@ h1, h2, h3 {
   width: 100%;
   background: #FFFFFF;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 0.9rem 1rem;
+  border-radius: 24px; /* Curved edges as requested */
+  padding: 0.9rem 1.25rem;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 400;
@@ -383,6 +383,13 @@ h1, h2, h3 {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.15);
+}
+
+.helper-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
+  margin-left: 0.25rem;
 }
 
 .loading {

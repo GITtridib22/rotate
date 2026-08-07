@@ -16,30 +16,26 @@ export default function LandingPage() {
       <div className="timeline-section">
         <h2 className="section-title">How it Works</h2>
         
-        <div className="glass-card timeline-card">
-          <div className="step">
-            <div className="step-number">1</div>
-            <div className="step-content">
+        <div className="timeline">
+          <div className="timeline-item">
+            <div className="timeline-node">1</div>
+            <div className="timeline-content">
               <h3>Code Every Day</h3>
               <p>Pick a track and build something small every single day.</p>
             </div>
           </div>
           
-          <div className="step-connector"></div>
-          
-          <div className="step">
-            <div className="step-number">2</div>
-            <div className="step-content">
+          <div className="timeline-item">
+            <div className="timeline-node">2</div>
+            <div className="timeline-content">
               <h3>Submit Proof</h3>
               <p>Push to GitHub and share your learnings on LinkedIn.</p>
             </div>
           </div>
           
-          <div className="step-connector"></div>
-          
-          <div className="step">
-            <div className="step-number">3</div>
-            <div className="step-content">
+          <div className="timeline-item">
+            <div className="timeline-node">3</div>
+            <div className="timeline-content">
               <h3>Build a Streak</h3>
               <p>Create an undeniable public record of your consistency.</p>
             </div>
