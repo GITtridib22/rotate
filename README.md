@@ -8,7 +8,7 @@ This repository contains our submission for **Problem Statement 1 (Redesign ABTa
 /day/12
 
 ## About the Project
-We built a mobile-first, high-performance frontend using Next.js. The design uses a custom "Night Shift" aesthetic to reduce eye strain for students coding late at night after college. 
+We built a mobile-first, high-performance frontend using Next.js. To guarantee our redesign stood out and completely departed from the current ABTalks design, we implemented a custom **"Neo-Brutalist"** aesthetic. This features high-contrast light mode, thick black borders, solid primary colors, and bold typography—ensuring a completely fresh, modern direction.
 
 ### The Thoughtful Idea
 To keep students motivated during late-night grinds, we implemented **Dopamine-Boosting Micro-Animations**. When a student successfully submits their GitHub and LinkedIn URLs on the Challenge Day page, the UI triggers a satisfying full-screen celebration sequence to reward their consistency.

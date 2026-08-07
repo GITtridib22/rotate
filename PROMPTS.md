@@ -36,3 +36,10 @@ This file tracks the AI prompts and interactions used to build this project, as 
 - **What was implemented:** Added a floating "Judge Controls" panel to `/dashboard` to toggle between Normal, Missed Day, and Empty Profile states directly on the live deployment. Created `route-map.txt`. Fixed a Next.js 15 breaking change where `params` must be unwrapped with `React.use()`.
 - **Files Changed:** `src/app/dashboard/page.js`, `src/app/globals.css`, `src/app/day/[id]/page.js`, `route-map.txt`
 - **Design Decisions:** Built the demo panel specifically for hackathon judging convenience without needing a real backend to trigger edge cases.
+
+## Feature 6: Complete UI Overhaul (Pivot to Neo-Brutalism)
+- **Date:** 2026-08-07
+- **Prompt Summary:** User stated the dark mode neon aesthetic was 99% similar to the current ABTalks website. Requested a full UI/UX change.
+- **What was implemented:** Completely rewrote `globals.css` to pivot the entire application to a "Neo-Brutalist" design. Switched from dark mode to a stark cream light mode. Replaced soft glowing shadows and glassmorphism with thick black borders, solid flat colors, and sharp offset drop-shadows. Updated all tracking files to reflect this change.
+- **Files Changed:** `src/app/globals.css`, `README.md`, `PROGRESS.md`, `INSTRUCTIONS.md`
+- **Design Decisions:** Chose Neo-Brutalism to guarantee a "completely new, clean, and modern direction" that acts as the polar opposite of a typical dark mode site, ensuring no accusations of cloning.

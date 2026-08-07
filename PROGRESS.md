@@ -10,7 +10,8 @@
 - [x] **Student Dashboard (`/dashboard`)**: Built dynamic streak visualization, edge cases (0-day empty state, missed day warnings), and daily task card.
 - [x] **Challenge Day (`/day/[id]`)**: Built distraction-free reading zone and submission form.
 - [x] **Thoughtful Idea**: Implemented dopamine-boosting success micro-animations upon form submission.
-- [x] **Hackathon Compliance**: Kept a completely atomic Git commit history and up-to-date `PROMPTS.md` log.
+- [x] **Design Pivot**: Completely overhauled UI to Neo-Brutalism (Light mode, thick borders, solid colors) to guarantee a unique submission.
+- [x] **Hackathon Compliance**: Kept a completely atomic Git commit history, up-to-date `PROMPTS.md` log, and created `route-map.txt`.
 
 ## Next Steps (User Action Required)
 1. Log into Vercel/Netlify.
