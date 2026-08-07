@@ -19,7 +19,8 @@
 - **Bonus**: A demo walkthrough (video or in README) is helpful but not mandatory.
 
 ## Current State
-- Awaiting the 3 problem statements to decide on the project direction.
-- No code has been written yet. Only `PROMPTS.md` and this `INSTRUCTIONS.md` file exist.
+- **Completed**: Initialized Next.js project. Overwrote `globals.css` with 'Night Shift' custom CSS. Added `src/data/mockDB.json`.
+- **In Progress**: Building the Landing Page (`/`).
+- **Upcoming**: Building the Student Dashboard (`/dashboard`) and Challenge Day (`/day/12`).
 
 *(Note to AI: Read this file whenever restarting or resuming the session to regain context.)*

@@ -1,0 +1,102 @@
+:root {
+  --bg-dark: #0a0a0c;
+  --bg-card: #141418;
+  --bg-card-hover: #1e1e24;
+  --text-primary: #f5f5f7;
+  --text-secondary: #8b8b93;
+  --accent-neon: #7c3aed; /* vibrant purple */
+  --accent-neon-glow: rgba(124, 58, 237, 0.4);
+  --accent-neon-hover: #6d28d9;
+  --success: #10b981;
+  --success-glow: rgba(16, 185, 129, 0.4);
+  --error: #ef4444;
+  --border-light: rgba(255, 255, 255, 0.08);
+  
+  --font-main: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  /* Mobile-first constraint optimization */
+  max-width: 390px;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+  border-left: 1px solid var(--border-light);
+  border-right: 1px solid var(--border-light);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Base Utility Classes */
+.container {
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-primary {
+  background: var(--accent-neon);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.875rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px var(--accent-neon-glow);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: var(--accent-neon-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--accent-neon-glow);
+}
+
+/* Animations */
+@keyframes breathing-glow {
+  0% { box-shadow: 0 0 10px var(--accent-neon-glow); }
+  50% { box-shadow: 0 0 25px var(--accent-neon-glow); }
+  100% { box-shadow: 0 0 10px var(--accent-neon-glow); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-pop {
+  animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-glow {
+  animation: breathing-glow 3s infinite ease-in-out;
+}

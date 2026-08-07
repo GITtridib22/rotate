@@ -1,0 +1,31 @@
+{
+  "user": {
+    "name": "Alex",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
+    "currentStreak": 11,
+    "totalCompleted": 11,
+    "totalDays": 60,
+    "standing": "Top 5%",
+    "hasMissedDay": false,
+    "firstDayState": false
+  },
+  "todayTask": {
+    "day": 12,
+    "title": "Build a Custom React Hook",
+    "description": "Create a reusable React hook that tracks the user's scroll position and returns the scroll direction (up/down). Use it to build a sticky header that hides on scroll down and shows on scroll up.",
+    "isCompleted": false
+  },
+  "history": [
+    { "day": 1, "completed": true },
+    { "day": 2, "completed": true },
+    { "day": 3, "completed": true },
+    { "day": 4, "completed": true },
+    { "day": 5, "completed": true },
+    { "day": 6, "completed": true },
+    { "day": 7, "completed": true },
+    { "day": 8, "completed": true },
+    { "day": 9, "completed": true },
+    { "day": 10, "completed": true },
+    { "day": 11, "completed": true }
+  ]
+}
