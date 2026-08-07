@@ -334,6 +334,55 @@ a {
   margin-top: 1rem;
 }
 
+/* Demo Controls (For Judges) */
+.pb-24 { padding-bottom: 6rem; }
+
+.demo-controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 10, 15, 0.95);
+  border-top: 1px solid var(--accent-neon);
+  border-radius: 20px 20px 0 0;
+  padding: 1rem;
+  z-index: 100;
+  box-shadow: 0 -5px 20px rgba(0, 243, 255, 0.15);
+}
+
+.demo-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--accent-neon);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.demo-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.demo-btn {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.demo-btn.active {
+  background: rgba(0, 243, 255, 0.1);
+  border-color: var(--accent-neon);
+  color: var(--text-primary);
+}
+
 .mt-4 { margin-top: 1rem; }
 .mt-6 { margin-top: 1.5rem; }
 .mb-4 { margin-bottom: 1rem; }

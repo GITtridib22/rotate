@@ -1,18 +1,31 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import fs from "fs";
-import path from "path";
+import db from "@/data/mockDB.json";
 
-export default async function Dashboard() {
-  // Read mock database
-  const filePath = path.join(process.cwd(), "src/data/mockDB.json");
-  const jsonData = fs.readFileSync(filePath, "utf-8");
-  const db = JSON.parse(jsonData);
+export default function Dashboard() {
+  // State for Demo Toggles (so judges can see edge cases on the live URL)
+  const [demoState, setDemoState] = useState("default");
 
-  const { user, todayTask } = db;
-  const progressPercentage = Math.round((user.totalCompleted / user.totalDays) * 100);
+  // Derive mock data based on selected demo state
+  let user = { ...db.user };
+  
+  if (demoState === "firstDay") {
+    user.firstDayState = true;
+    user.hasMissedDay = false;
+    user.currentStreak = 0;
+    user.totalCompleted = 0;
+  } else if (demoState === "missedDay") {
+    user.firstDayState = false;
+    user.hasMissedDay = true;
+  }
+
+  const todayTask = db.todayTask;
+  const progressPercentage = user.totalDays > 0 ? Math.round((user.totalCompleted / user.totalDays) * 100) : 0;
 
   return (
-    <main className="container dashboard-container animate-pop">
+    <main className="container dashboard-container animate-pop pb-24">
       <header className="dashboard-header">
         <div>
           <h1 className="greeting">Welcome back, {user.name}</h1>
@@ -24,7 +37,7 @@ export default async function Dashboard() {
       {user.firstDayState ? (
         <div className="glass-card streak-card empty-state text-center">
           <h2>Your Journey Begins Today</h2>
-          <p>You have 0 days in your streak. Complete today's task to ignite it!</p>
+          <p className="text-secondary mt-4">You have 0 days in your streak. Complete today's task to ignite it!</p>
         </div>
       ) : (
         <div className={`glass-card streak-card ${user.hasMissedDay ? "missed-day" : "active-streak"}`}>
@@ -42,7 +55,7 @@ export default async function Dashboard() {
           </div>
           <p className="progress-text">{user.totalCompleted} out of {user.totalDays} days completed</p>
           {user.hasMissedDay && (
-            <p className="warning-text">You missed a day! Don't let the streak die completely.</p>
+            <p className="warning-text">⚠️ You missed a day! Don't let the streak die completely.</p>
           )}
         </div>
       )}
@@ -61,6 +74,31 @@ export default async function Dashboard() {
             View & Submit Task
           </Link>
         )}
+      </div>
+
+      {/* Demo Controls Floating Panel for Judges */}
+      <div className="demo-controls glass-card">
+        <p className="demo-title">Judge Controls (Edge Cases)</p>
+        <div className="demo-buttons">
+          <button 
+            className={`demo-btn ${demoState === "default" ? "active" : ""}`}
+            onClick={() => setDemoState("default")}
+          >
+            Normal
+          </button>
+          <button 
+            className={`demo-btn ${demoState === "missedDay" ? "active" : ""}`}
+            onClick={() => setDemoState("missedDay")}
+          >
+            Missed Day
+          </button>
+          <button 
+            className={`demo-btn ${demoState === "firstDay" ? "active" : ""}`}
+            onClick={() => setDemoState("firstDay")}
+          >
+            Empty Profile
+          </button>
+        </div>
       </div>
     </main>
   );
