@@ -501,3 +501,33 @@ h1, h2, h3 {
 .mb-4 { margin-bottom: 1rem; }
 .text-center { text-align: center; }
 .text-secondary { color: var(--text-secondary); }
+
+/* Mobile Optimization for extremely small screens (iPhone SE, etc.) */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .demo-btn {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.2rem;
+  }
+  .demo-controls {
+    width: 95%;
+    padding: 0.5rem;
+  }
+  .streak-number {
+    font-size: 2.5rem;
+  }
+  .progress-circle {
+    width: 56px;
+    height: 56px;
+    font-size: 1rem;
+    border-width: 3px;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+}
