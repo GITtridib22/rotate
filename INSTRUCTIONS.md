@@ -19,8 +19,8 @@
 - **Bonus**: A demo walkthrough (video or in README) is helpful but not mandatory.
 
 ## Current State
-- **Completed**: Initialized Next.js project. Overwrote `globals.css` with 'Night Shift' custom CSS. Added `src/data/mockDB.json`.
-- **In Progress**: Building the Landing Page (`/`).
-- **Upcoming**: Building the Student Dashboard (`/dashboard`) and Challenge Day (`/day/12`).
+- **Completed**: Initialized project & theme. Built Landing Page (`/`).
+- **In Progress**: Building the Student Dashboard (`/dashboard`).
+- **Upcoming**: Building Challenge Day (`/day/12`).
 
 *(Note to AI: Read this file whenever restarting or resuming the session to regain context.)*

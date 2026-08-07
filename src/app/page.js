@@ -1,69 +1,58 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.js</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="container landing-container animate-pop">
+      <div className="hero-section text-center">
+        <div className="badge-glow">ABTalks Challenge</div>
+        <h1 className="hero-title">
+          60 Days to <span className="text-neon">Get Noticed.</span>
+        </h1>
+        <p className="hero-subtitle">
+          Code daily. Build your streak. Prove your consistency to recruiters.
+        </p>
+      </div>
+
+      <div className="timeline-section">
+        <h2 className="section-title">How it Works</h2>
+        
+        <div className="glass-card timeline-card">
+          <div className="step">
+            <div className="step-number">1</div>
+            <div className="step-content">
+              <h3>Code Every Day</h3>
+              <p>Pick a track and build something small every single day.</p>
+            </div>
+          </div>
+          
+          <div className="step-connector"></div>
+          
+          <div className="step">
+            <div className="step-number">2</div>
+            <div className="step-content">
+              <h3>Submit Proof</h3>
+              <p>Push to GitHub and share your learnings on LinkedIn.</p>
+            </div>
+          </div>
+          
+          <div className="step-connector"></div>
+          
+          <div className="step">
+            <div className="step-number">3</div>
+            <div className="step-content">
+              <h3>Build a Streak</h3>
+              <p>Create an undeniable public record of your consistency.</p>
+            </div>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+
+      <div className="cta-section">
+        <Link href="/dashboard" className="btn-primary">
+          Start Your Challenge
+        </Link>
+        <p className="cta-microcopy">No credit card. Just pure grit.</p>
+      </div>
+    </main>
   );
 }
