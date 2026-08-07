@@ -415,11 +415,8 @@ h1, h2, h3 {
 
 /* Demo Controls (For Judges) */
 .demo-controls {
-  position: fixed;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
+  margin: 2rem auto 0 auto;
+  width: 100%;
   max-width: 400px;
   background: var(--bg-card); /* Uses the 55% opacity variable */
   backdrop-filter: blur(16px);
@@ -427,13 +424,11 @@ h1, h2, h3 {
   border: 1px solid var(--border-color);
   border-radius: 100px;
   padding: 0.75rem 1rem;
-  z-index: 100;
   box-shadow: var(--shadow-soft);
-  margin-bottom: 0 !important;
 }
 
 .demo-controls:hover {
-  transform: translateX(-50%) translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .demo-title {
