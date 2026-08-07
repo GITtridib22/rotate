@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 :root {
-  --bg-primary: #F8F9FA; 
+  --bg-primary: #f7d3a6; 
   --bg-card: #FFFFFF;
   --text-primary: #111111;
   --text-secondary: #555555;
@@ -29,6 +29,10 @@
 
 body {
   background-color: var(--bg-primary);
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
