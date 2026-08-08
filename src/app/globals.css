@@ -536,9 +536,9 @@ h1, h2, h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.7); /* Darker overlay to push dashboard to back */
+  backdrop-filter: blur(12px); /* Higher blur to isolate modal */
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -550,10 +550,10 @@ h1, h2, h3 {
   position: relative;
   width: 100%;
   max-width: 400px;
-  background: var(--bg-card);
-  border: var(--border-width) solid var(--border-color);
+  background: #ffffff; /* Solid white to prevent dashboard content bleed-through */
+  border: var(--border-width) solid rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-lg);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
   padding: 2rem 1.5rem !important;
   margin-bottom: 0 !important;
 }
@@ -644,8 +644,8 @@ h1, h2, h3 {
 }
 
 .stat-box {
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #f8f9fa; /* Solid light gray background */
+  border: 1px solid #e9ecef; /* Clean border for contrast */
   border-radius: var(--radius-md);
   padding: 0.75rem;
   display: flex;
@@ -694,20 +694,21 @@ h1, h2, h3 {
   gap: 0.5rem;
 }
 
+/* Achievements section */
 .achievement-item {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid transparent;
+  background: #f8f9fa; /* Solid light gray */
+  border: 1px solid #e9ecef;
   transition: all 0.2s ease;
 }
 
 .achievement-item.unlocked {
-  border-color: rgba(62, 128, 32, 0.15);
-  background: rgba(62, 128, 32, 0.04);
+  border-color: rgba(62, 128, 32, 0.25); /* Theme-matched border */
+  background: #f0fdf4; /* Soft green theme background */
 }
 
 .achievement-item.locked {

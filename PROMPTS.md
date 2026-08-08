@@ -100,6 +100,14 @@ This file tracks the AI prompts and interactions used to build this project, as 
 - **Files Changed:** `src/app/globals.css`, `PROMPTS.md`
 - **Design/Technical Decisions:** Solved contrast issues between the white stat box backgrounds and the white translucent modal card background by changing to a slightly darker, recessed panel style.
 
+## Feature 15: Opaque Stats Modal & Deep Backdrop Blur
+- **Date:** 2026-08-08
+- **Prompt Summary:** "nope very transparent and hence the details are not clearly visible. Make it better so that when the profile icon is clicked, the stats are visible only and the background stays in the background"
+- **What was implemented:** Significantly increased modal contrast and readability: set the modal overlay backdrop to a much darker shade (`rgba(0, 0, 0, 0.7)`) with a strong `12px` blur to isolate it, and set the modal card background to solid opaque white (`#ffffff`). Updated internal stat boxes and achievements to use clean, high-contrast solid backgrounds (`#f8f9fa` and `#f0fdf4`) rather than transparent layers.
+- **Files Changed:** `src/app/globals.css`, `PROMPTS.md`
+- **Design/Technical Decisions:** Solved readability issues caused by translucent layers overlapping the background dashboard layout by switching to a high-contrast opaque modal design with a deeply blurred backdrop overlay.
+
+
 
 
 
