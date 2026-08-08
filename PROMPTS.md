@@ -72,3 +72,18 @@ This file tracks the AI prompts and interactions used to build this project, as 
 - **Files Changed:** `src/data/mockDB.json`, `src/app/globals.css`, `public/avatar_3d.png`
 - **Design/Technical Decisions:** Replaced the generic placeholder image with a premium custom-generated 3D developer avatar asset matching the green theme. Enhanced the CSS styling (`object-fit: cover`) to ensure the avatar fits the circular frame perfectly without distortion.
 
+## Feature 11: Visually Enhancing README Documentation
+- **Date:** 2026-08-08
+- **Prompt Summary:** "update the readme on github and make it visually attractive while retaining the information about the project"
+- **What was implemented:** Completely revamped `README.md` to be visually striking and modern. Added emoji headings, a clear route map layout table, descriptive lists for the "Dopamine-Boosting Micro-Animations" feature, interactive judge controls guidance, and clean visual structure.
+- **Files Changed:** `README.md`
+- **Design/Technical Decisions:** Updated obsolete design descriptions (such as old Neo-Brutalist references) to align with the final **Modern Soft UI** design details (cream background, green highlights, translucent panels) to ensure documentation matches the actual deployed product perfectly.
+
+## Feature 12: Theme-Matched Minecraft Avatar
+- **Date:** 2026-08-08
+- **Prompt Summary:** "update the profile avatar to a minecraft character, but it should match the rest ofthe UI. Also update the prompts.md file with the last 2 prompts"
+- **What was implemented:** Generated a custom pixelated Minecraft-style character head avatar that matches the site's green accent theme (`#3e8020`) and warm cream aesthetic. Replaced the profile avatar in the database with the new asset, and logged these interactions in `PROMPTS.md`.
+- **Files Changed:** `src/data/mockDB.json`, `public/minecraft_avatar.png`, `PROMPTS.md`
+- **Design/Technical Decisions:** Maintained aesthetic harmony by matching the color scheme of the generated pixel character to the site's design tokens (warm cream background, green accents), fitting within the soft UI design system.
+
+
