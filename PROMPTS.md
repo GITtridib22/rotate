@@ -57,3 +57,18 @@ This file tracks the AI prompts and interactions used to build this project, as 
 - **What was implemented:** Completely rewrote `globals.css` to adopt a crisp, energetic Orange and White palette. Changed backgrounds to pure white, text to deep black, and used a vibrant Orange (`#FF5722`) for highlights. Standardized the `.btn-primary` class to industry standards: solid orange background, white text, 8px border radius, and clean hover shadows. Removed gradients to maintain a clean, professional aesthetic.
 - **Files Changed:** `src/app/globals.css`
 - **Design Decisions:** Chose a highly energetic color scheme that perfectly fits a "Daily Challenge" / productivity app, ensuring a clean, modern, and completely distinct look from the original ABTalks dark-mode design.
+
+## Feature 9: Git Repository Clean-up & Root Link
+- **Date:** 2026-08-08
+- **Prompt Summary:** "connect this rotate folder to the github repo https://github.com/GITtridib22/rotate.git"
+- **What was implemented:** Restructured the project directory by moving all repository files and the `.git` directory from the nested `rotate/rotate` folder up to the workspace root `C:\Users\RASHMI\Documents\rotate`, and removed the empty nested folder. Verified the workspace root is directly connected to the remote repository.
+- **Files Changed:** None (moved all files to workspace root, deleted nested folder).
+- **Design/Technical Decisions:** Resolved a nested clone structure to align the git repository root with the active workspace directory, ensuring clean version control and straight-forward Vercel deployments.
+
+## Feature 10: Custom Profile Avatar & Styling
+- **Date:** 2026-08-08
+- **Prompt Summary:** "Now, when the website is deployed on vercel, the users click on "Start the challenge" button. On clicking it, a page appears with a profile logo on the top right corner. Change it without changing anything else in the UI/UX and make sure the change is reflected in the github repo and obviously on the vercel deployed site"
+- **What was implemented:** Generated a high-quality 3D developer avatar asset and saved it to the public folder. Updated the database to use the new avatar and optimized the avatar's CSS styling. Committed and pushed the changes to GitHub to trigger Vercel deployment.
+- **Files Changed:** `src/data/mockDB.json`, `src/app/globals.css`, `public/avatar_3d.png`
+- **Design/Technical Decisions:** Replaced the generic placeholder image with a premium custom-generated 3D developer avatar asset matching the green theme. Enhanced the CSS styling (`object-fit: cover`) to ensure the avatar fits the circular frame perfectly without distortion.
+
