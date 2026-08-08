@@ -86,4 +86,12 @@ This file tracks the AI prompts and interactions used to build this project, as 
 - **Files Changed:** `src/data/mockDB.json`, `public/minecraft_avatar.png`, `PROMPTS.md`
 - **Design/Technical Decisions:** Maintained aesthetic harmony by matching the color scheme of the generated pixel character to the site's design tokens (warm cream background, green accents), fitting within the soft UI design system.
 
+## Feature 13: Interactive Minecraft Stats Modal
+- **Date:** 2026-08-08
+- **Prompt Summary:** "okay now make sure that whenthe user clicks on the profile icon, it shows their performnce and platform usage analytics, and make sure thismatches the UI and also, the minecraft part of the logo. Update the prompts.md"
+- **What was implemented:** Added an interactive "Developer Character Sheet" modal overlay triggered by clicking the user's Minecraft profile avatar. Designed stats tracking (Tasks Solved, Streak Blocks, Server Rank, and Efficiency) alongside an XP progress bar and Minecraft-themed achievements (Wood Age, Iron Age, Diamond Age). Updated global CSS with modal styles (blur background, glass card, grids, bar transitions).
+- **Files Changed:** `src/app/dashboard/page.js`, `src/app/globals.css`, `PROMPTS.md`
+- **Design/Technical Decisions:** Implemented gaming-inspired mechanics (leveling, XP tracking, block/ore milestones) to align with the Minecraft pixel logo. Used Geist Mono font for retro data readouts. Styled with custom glassmorphism and theme-matching green accents to fit the Modern Soft UI system.
+
+
 

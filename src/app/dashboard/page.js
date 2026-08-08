@@ -7,6 +7,7 @@ import db from "@/data/mockDB.json";
 export default function Dashboard() {
   // State for Demo Toggles (so judges can see edge cases on the live URL)
   const [demoState, setDemoState] = useState("default");
+  const [isStatsOpen, setIsStatsOpen] = useState(false);
 
   // Derive mock data based on selected demo state
   let user = { ...db.user };
@@ -31,7 +32,14 @@ export default function Dashboard() {
           <h1 className="greeting">Welcome back, {user.name}</h1>
           <p className="standing-badge">🏆 {user.standing}</p>
         </div>
-        <img src={user.avatar} alt="Avatar" className="avatar" />
+        <img 
+          src={user.avatar} 
+          alt="Avatar" 
+          className="avatar" 
+          onClick={() => setIsStatsOpen(true)}
+          style={{ cursor: "pointer" }}
+          title="Click to view stats"
+        />
       </header>
 
       {user.firstDayState ? (
@@ -100,6 +108,94 @@ export default function Dashboard() {
           </button>
         </div>
       </div>
+
+      {isStatsOpen && (
+        <div className="modal-overlay" onClick={() => setIsStatsOpen(false)}>
+          <div className="modal-content glass-card animate-pop" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setIsStatsOpen(false)} aria-label="Close modal">×</button>
+            
+            <div className="modal-header-section">
+              <img src={user.avatar} alt="Avatar" className="modal-avatar" />
+              <div>
+                <h2 className="minecraft-title">{user.name}'s Stats</h2>
+                <p className="minecraft-subtitle">LVL {user.currentStreak} Coder</p>
+              </div>
+            </div>
+
+            <div className="xp-container">
+              <div className="xp-label">
+                <span>XP PROGRESS</span>
+                <span>{user.totalCompleted * 100} / {user.totalDays * 100} XP</span>
+              </div>
+              <div className="xp-bar-outer">
+                <div className="xp-bar-inner" style={{ width: `${progressPercentage}%` }}></div>
+              </div>
+            </div>
+
+            <div className="stats-grid">
+              <div className="stat-box">
+                <span className="stat-icon">⛏️</span>
+                <div className="stat-info">
+                  <span className="stat-val">{user.totalCompleted}</span>
+                  <span className="stat-lbl">Tasks Solved</span>
+                </div>
+              </div>
+              <div className="stat-box">
+                <span className="stat-icon">🔥</span>
+                <div className="stat-info">
+                  <span className="stat-val">{user.currentStreak}</span>
+                  <span className="stat-lbl">Streak Blocks</span>
+                </div>
+              </div>
+              <div className="stat-box">
+                <span className="stat-icon">💎</span>
+                <div className="stat-info">
+                  <span className="stat-val">{user.standing}</span>
+                  <span className="stat-lbl">Server Rank</span>
+                </div>
+              </div>
+              <div className="stat-box">
+                <span className="stat-icon">⚡</span>
+                <div className="stat-info">
+                  <span className="stat-val">{progressPercentage}%</span>
+                  <span className="stat-lbl">Efficiency</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="achievements-section">
+              <h3 className="achievements-title">Achievements</h3>
+              <div className="achievement-list">
+                <div className={`achievement-item ${user.totalCompleted >= 1 ? "unlocked" : "locked"}`}>
+                  <span className="ach-badge">🪵</span>
+                  <div>
+                    <h4>Wood Age</h4>
+                    <p>{user.totalCompleted >= 1 ? "Unlocked: Complete Day 1" : "Locked: Complete Day 1"}</p>
+                  </div>
+                </div>
+                <div className={`achievement-item ${user.currentStreak >= 7 ? "unlocked" : "locked"}`}>
+                  <span className="ach-badge">⚔️</span>
+                  <div>
+                    <h4>Iron Age</h4>
+                    <p>{user.currentStreak >= 7 ? "Unlocked: 7-Day Streak" : "Locked: 7-Day Streak"}</p>
+                  </div>
+                </div>
+                <div className={`achievement-item ${user.totalCompleted >= 30 ? "unlocked" : "locked"}`}>
+                  <span className="ach-badge">💎</span>
+                  <div>
+                    <h4>Diamond Age</h4>
+                    <p>{user.totalCompleted >= 30 ? "Unlocked: 30-Day Streak" : "Locked: 30-Day Streak"}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <button className="btn-primary mt-6 w-full" onClick={() => setIsStatsOpen(false)}>
+              Back to Game
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
