@@ -1,7 +1,7 @@
 {
   "user": {
     "name": "Alex",
-    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
+    "avatar": "/avatar_3d.png",
     "currentStreak": 11,
     "totalCompleted": 11,
     "totalDays": 60,
