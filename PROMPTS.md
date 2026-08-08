@@ -88,10 +88,18 @@ This file tracks the AI prompts and interactions used to build this project, as 
 
 ## Feature 13: Interactive Minecraft Stats Modal
 - **Date:** 2026-08-08
-- **Prompt Summary:** "okay now make sure that whenthe user clicks on the profile icon, it shows their performnce and platform usage analytics, and make sure thismatches the UI and also, the minecraft part of the logo. Update the prompts.md"
+- **Prompt Summary:** "okay now make sure that when the user clicks on the profile icon, it shows their performnce and platform usage analytics, and make sure this matches the UI and also, the minecraft part of the logo. Update the prompts.md"
 - **What was implemented:** Added an interactive "Developer Character Sheet" modal overlay triggered by clicking the user's Minecraft profile avatar. Designed stats tracking (Tasks Solved, Streak Blocks, Server Rank, and Efficiency) alongside an XP progress bar and Minecraft-themed achievements (Wood Age, Iron Age, Diamond Age). Updated global CSS with modal styles (blur background, glass card, grids, bar transitions).
 - **Files Changed:** `src/app/dashboard/page.js`, `src/app/globals.css`, `PROMPTS.md`
 - **Design/Technical Decisions:** Implemented gaming-inspired mechanics (leveling, XP tracking, block/ore milestones) to align with the Minecraft pixel logo. Used Geist Mono font for retro data readouts. Styled with custom glassmorphism and theme-matching green accents to fit the Modern Soft UI system.
+
+## Feature 14: Enhanced Stats Contrast
+- **Date:** 2026-08-08
+- **Prompt Summary:** "make the stat box opacity darker since it is not visible clearly, update thee prompts.md"
+- **What was implemented:** Modified the `.stat-box` background style to use a darker translucent panel styling (`rgba(0, 0, 0, 0.05)`) with an outline border to improve visual contrast and readability inside the glassmorphic modal overlay.
+- **Files Changed:** `src/app/globals.css`, `PROMPTS.md`
+- **Design/Technical Decisions:** Solved contrast issues between the white stat box backgrounds and the white translucent modal card background by changing to a slightly darker, recessed panel style.
+
 
 
 
